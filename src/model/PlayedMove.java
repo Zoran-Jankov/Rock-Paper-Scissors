@@ -1,9 +1,5 @@
 package model;
 
-public enum PlayedMove
-{
-	ROCK,
-	PAPER,
-	SCISSORS,
-	NONE;
+public enum PlayedMove {
+	NONE, PAPER, ROCK, SCISSORS;
 }

@@ -1,8 +1,5 @@
 package model;
 
-public enum Winer
-{
-	DRAW,
-	PLAYER,
-	COMPUTER;
+public enum Winer {
+	COMPUTER, DRAW, PLAYER;
 }

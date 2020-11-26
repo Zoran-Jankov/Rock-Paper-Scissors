@@ -6,39 +6,37 @@ import java.util.Map;
 import model.PlayedMove;
 import model.Winer;
 
-public class GameInterface
-{
-	public PlayedMove getPlayerMove(Map<Winer,Integer> result, PlayedMove lastPlayerMove, PlayedMove lastComputerMove)
-	{
+public class GameInterface {
+	public PlayedMove getPlayerMove(Map<Winer, Integer> result, PlayedMove lastPlayerMove,
+			PlayedMove lastComputerMove) {
 		showDisplay(result, lastComputerMove, lastComputerMove);
-		
+
 		int input = 0;
-		
+
 		try {
 			input = System.in.read();
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
-		while (!(input == 1 || input == 2 || input == 3));
-		
+
+		while (!(input == 1 || input == 2 || input == 3))
+			;
+
 		PlayedMove playedMove = null;
-		
-		switch (input)
-		{
-			case 1:
-				playedMove = PlayedMove.ROCK;
-			case 2:
-				playedMove = PlayedMove.PAPER;
-			case 3:
-				playedMove = PlayedMove.SCISSORS;
+
+		switch (input) {
+		case 1:
+			playedMove = PlayedMove.ROCK;
+		case 2:
+			playedMove = PlayedMove.PAPER;
+		case 3:
+			playedMove = PlayedMove.SCISSORS;
 		}
 		return playedMove;
 	}
-	
-	public void showDisplay(Map<Winer,Integer> result, PlayedMove lastPlayerMove, PlayedMove lastComputerMove)
-	{
+
+	public void showDisplay(Map<Winer, Integer> result, PlayedMove lastPlayerMove, PlayedMove lastComputerMove) {
 		System.out.println("ROCK PAPER SCISSORS GAME");
 		System.out.println();
 		System.out.println("WINS " + result.get(Winer.PLAYER));
@@ -53,9 +51,8 @@ public class GameInterface
 		System.out.println("2. Paper");
 		System.out.println("3. Scissors");
 	}
-	
-	public void showLastMoves(PlayedMove playerMove, PlayedMove computerMove)
-	{
+
+	public void showLastMoves(PlayedMove playerMove, PlayedMove computerMove) {
 		System.out.print("Player: " + playerMove.name() + "     " + computerMove.name());
 	}
 }
